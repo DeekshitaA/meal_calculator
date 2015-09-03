@@ -17,7 +17,15 @@ var Joe = new Diner([{'item':'Pasta', 'bill': 12.20},
 var Jill = new Diner([{'item':'Chicken Piccata', 'bill': 7.20},
                     {'item':'Torta Rustica','bill':14},
                     {'item': 'Mojito', 'bill': 10}]);
-                  //  console.log('John: '+ JSON.parse(John));
 var TotalBill = John.addToBill() + Joe.addToBill() + Jill.addToBill();
-var TotalBillWithTax = TotalBill + (TotalBill / 0.2);
-console.log('TotalBill: '+ TotalBill);
+var tip = TotalBill * 0.1;
+var TotalBillWithTip = TotalBill + tip;
+var TotalBillWithTax = TotalBill + (TotalBill * 0.2) + tip;
+var JohnBill =  John.addToBill() + (John.addToBill() * 0.2) + (tip/3);
+var JoeBill = Joe.addToBill() + (Joe.addToBill() * 0.2) + (tip/3);
+var JillBill = Jill.addToBill() + (Jill.addToBill() * 0.2) + (tip/3);
+console.log('TotalBill: '+ TotalBillWithTip);
+console.log('TotalBill With Tax: '+ TotalBillWithTax);
+console.log('John bill:' + JohnBill);
+console.log("Joe's bill:" + JoeBill);
+console.log("Jill's bill:" + JillBill);
