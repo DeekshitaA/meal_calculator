@@ -1,14 +1,4 @@
-var Diner = function(dishes){
-  this.dishes = dishes;
-};
-
-Diner.prototype.addToBill = function(){
-  var bill = 0;
-  for(var i = 0; i< this.dishes.length; i++){
-    bill += this.dishes[i].bill;
-  }
-  return bill;
-};
+var Diner = require('./models/diner');
 
 var John = new Diner([{'item':'pizza', 'bill': 10.20},
                       {'item':'diet coke','bill':2}]);
